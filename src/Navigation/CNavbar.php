@@ -31,6 +31,7 @@ class CNavbar
           'create_url' => function($url) {
             return $url;
           },
+          'icon'    => null,
         );
         $menu = array_replace_recursive($default, $this->config);
 
@@ -61,7 +62,8 @@ class CNavbar
 
             $selected = ($selected || $selectedParent) ? " class='${selected}{$selectedParent}' " : null;      
             $url = $createUrl($item['url']);
-            $html .= "\n<li{$selected}><a href='{$url}' title='{$item['title']}'>{$item['text']}</a>{$submenu}</li>\n";
+            $icon = isset($item['icon']) ? "<i class='{$item['icon']}'></i>" : null;
+            $html .= "\n<li{$selected}><a href='{$url}' title='{$item['title']}'>{$icon} {$item['text']}</a>{$submenu}</li>\n";
           }
 
           return array("\n<ul>$html</ul>\n", $hasItemIsSelected);
