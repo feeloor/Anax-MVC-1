@@ -10,7 +10,7 @@ $app = new \Anax\Kernel\CAnax($di);
 // Create services and inject into the app. 
 $di->set('form', '\Mos\HTMLForm\CForm');
 
-$app->url->setUrlType(\Anax\Url\CUrl::URL_CLEAN);
+$app->url->setUrlType(\Anax\Url\CUrl::URL_APPEND);
 $app->theme->configure(ANAX_APP_PATH . 'config/theme-grid.php');
 $app->navbar->configure(ANAX_APP_PATH . 'config/navbar_grid.php');
 
@@ -18,6 +18,11 @@ $di->set('CommentController', function() use ($di) {
     $controller = new \Anax\Comment\CommentController();
     $controller->setDI($di);
     return $controller;
+});
+
+$di->setShared('table', function() {
+    $table = new \Feeloor\Table\CTable();
+    return $table;
 });
 
 $app->router->add('', function() use ($app) {
@@ -209,6 +214,101 @@ $app->router->add('newTheme/fonts', function() use($app) {
         'content' => $content,
         'byline' => null
         ]);
+});
+
+$app->router->add('table', function() use ($app) {
+    $app->theme->setTitle("Table-test");
+
+    $app->table->create([
+            'tableClass' => 'class',
+            
+            'data' => [
+                'heading' => [
+                    'item-1' => [
+                        'type' => 'th',
+                        'class' => 'th-class',
+                        'content' => 'column 1',
+                    ],
+
+                    'item-2' => [
+                        'type' => 'th',
+                        'class' => 'th-class',
+                        'content' => 'column 2',
+                    ],
+
+                    'item-3' => [
+                        'type' => 'th',
+                        'class' => 'th-class',
+                        'content' => 'column 3',
+                    ],
+                ],
+
+                'row-1' => [
+                    'item-1' => [
+                        'type' => 'td',
+                        'class' => 'td-class1',
+                        'content' => 'one',
+                    ],
+
+                    'item-2' => [
+                        'type' => 'td',
+                        'class' => 'tdssss',
+                        'content' => 'two',
+                    ],
+
+                    'item-3' => [
+                        'type' => 'td',
+                        'class' => 'tdssss',
+                        'content' => 'three',
+                    ],
+                ],
+
+                'row-2' => [
+                    'item-1' => [
+                        'type' => 'td',
+                        'class' => 'td-class1',
+                        'content' => 'four',
+                    ],
+
+                    'item-2' => [
+                        'type' => 'td',
+                        'class' => 'tdssss',
+                        'content' => 'five',
+                    ],
+
+                    'item-3' => [
+                        'type' => 'td',
+                        'class' => 'tdssss',
+                        'content' => 'six',
+                    ],  
+                ],
+
+                'row-3' => [
+                    'item-1' => [
+                        'type' => 'td',
+                        'class' => 'td-class1',
+                        'content' => 'seven',
+                    ],
+
+                    'item-2' => [
+                        'type' => 'td',
+                        'class' => 'tdssss',
+                        'content' => 'eight',
+                    ],
+
+                    'item-3' => [
+                        'type' => 'td',
+                        'class' => 'tdssss',
+                        'content' => 'nine',
+                    ],  
+                ],
+            ],
+        ]);
+
+    $app->views->add('me/index', [
+        'content' => $app->table->showTable(),
+        'byline' => null
+    ]);
 });
 
 $app->router->handle();

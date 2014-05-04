@@ -28,5 +28,7 @@ class CDIMyFactoryDefault extends CDIFactoryDefault
             $controller->setDI($this);
             return $controller;
         });
+
+        
     }
 }

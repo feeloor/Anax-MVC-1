@@ -75,6 +75,27 @@ Kommentarklass valde jag att göra om helt istället för att bygga på den gaml
 Sammanfattning:
 Otroligt nöjd med kursmomentet, kan vara det bästa hittills! 
 
+Kmom05
+------
+
+Ja, då var ytterliggare ett kursmoment färdigt.
+Vad ska jag säga om detta? Det var ett roligt och extremt lärorikt kursmoment och väldigt väldigt roligt. Jag måste medge att när jag läste instruktionerna så var jag inte allt för glad, men det fick jag äta upp. Det var inte bara roligt utan väldigt intressant och bra kunskap att ha, just med hur allt fungerade.
+
+**Inspiration**
+
+Idén till min modul kom väl från början från Mos tips, vilket jag nappade på ganska direkt. Anledningen till att det verkade så intressant och kul och även bra att ha var väl för att efter vi i kmom04 använde oss av [CForm][10] så ville jag göra en liknande för tables. Det var så otroligt lätt och smidigt att använda sig utav [CForm][10].
+Jag skrev all kod själv, dock tog jag lite idéer från [CForm][10], hur hela grejen var uppbyggd.
+
+**Utveckling och integrering**
+
+Utvecklingen gick faktiskt väldigt lätt och smärtfritt, självklart stötte man på några problem men inte alls i den klassen jag trodde de skulle vara. Integreringen var dock lite värre, att få det att fungera med namespace's osv. Fick sitta en del och studera andras kod. Fick även ta mig en liten repetition på vissa delar av [Anax-MVC][12] då det var lite suddigt på vissa fronter. Men tillslut så, då gick det och jag måste säga att jag är väldigt nöjd med resultatet. Jag ville göra en komplett modul som var bra att ha och inte bara nu utan även i framtiden, och jag tror definitivt att jag kommer ha användning för denna.
+
+**Publisera paketet**
+
+Detta var en del som tog mig mycket tid. Det var problem hit och dit. Att lägga upp paketet på [GitHub][13] var inga svårigheter men däremot [Packagist][4] tog sin lilla tid. När jag väl kom till denna del så tänkte jag att detta går ju snabbt och lätt och jag behöver inte läsa några instruktioner eller dylikt. "Visst" säger jag bara nu i efterhand, det var fel på namnet på mitt paket och de ena och de andra. Men men, man lär sig av sina misstag. Att få publisera sitt paket såhär var faktiskt väldigt roligt, det var lite spännande att få lägga upp sitt "eget", kändes lite mer "på riktigt". Det var lite små kruxigt att fixa till readme osv men det var samtidigt bra träning och ett bra tillfälle att lära sig mer om [Markdown][14]. Jag lyckades iallafall tillslut och det är väl poängen antar jag. 
+
+
+
 [1]:http://windows.microsoft.com/sv-se/windows-8/meet
 [2]:http://www.sublimetext.com/
 [3]:https://getcomposer.org/
@@ -86,3 +107,6 @@ Otroligt nöjd med kursmomentet, kan vara det bästa hittills!
 [9]:http://necolas.github.io/normalize.css/
 [10]:https://github.com/mosbth/cform
 [11]:https://github.com/mosbth/cdatabase
+[12]:https://github.com/mosbth/Anax-MVC/
+[13]:https://github.com/
+[14]:http://michelf.ca/projects/php-markdown/
